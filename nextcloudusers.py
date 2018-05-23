@@ -142,7 +142,6 @@ class Client(object):
         :returns: True if the operation succeeded, False otherwise
         :raises: HTTPResponseError in case an HTTP error status was returned
         """
-        # TODO actual logout ?
         self._session.close()
         return True
 
@@ -544,7 +543,7 @@ class MeinDialog(QtWidgets.QDialog):
             tries to log in and checks if group exists
             starts user creation process if everything is ok
         """
-        
+        #FIXME   check if everything is set up correctly.. no empty strings !!!!!
         self.homepage_url = self.ui.domain.text().strip('\n')
         self.admin_username = self.ui.admin.text()
         self.admin_password = self.ui.password.text()
@@ -553,7 +552,12 @@ class MeinDialog(QtWidgets.QDialog):
         if self.users == "":
             self.updateProgress("Please add some users first")
             return
-            
+        
+        if self.users == "" or self.homepage_url == "" or self.admin_username == "" or self.admin_password == "" or self.group == "":
+            self.updateProgress("Please fill out all connection parameters") 
+            self.enabledUI(True)
+            return
+        
         self.updateProgress("Trying to log in")
     
         self.ocinstance = Client(self.homepage_url)
