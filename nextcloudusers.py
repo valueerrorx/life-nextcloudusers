@@ -428,7 +428,7 @@ class MeinDialog(QtWidgets.QDialog):
         QtWidgets.QDialog.__init__(self)
         scriptdir=os.path.dirname(os.path.abspath(__file__))
         uifile=os.path.join(scriptdir,'nextcloudusers.ui')
-        winicon=os.path.join(scriptdir,'appicon.png')
+        winicon=os.path.join(scriptdir,'pixmaps/cloudusers.png')
         
         self.ui = uic.loadUi(uifile)        # load UI
         self.ui.setWindowIcon(QIcon(winicon))
@@ -543,7 +543,7 @@ class MeinDialog(QtWidgets.QDialog):
             tries to log in and checks if group exists
             starts user creation process if everything is ok
         """
-        #FIXME   check if everything is set up correctly.. no empty strings !!!!!
+  
         self.homepage_url = self.ui.domain.text().strip('\n')
         self.admin_username = self.ui.admin.text()
         self.admin_password = self.ui.password.text()
