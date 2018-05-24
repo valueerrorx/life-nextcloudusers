@@ -530,7 +530,7 @@ class MeinDialog(QtWidgets.QDialog):
             
             self.tolog(">>  %s.%s   [%s]" % (user[0], user[1], user[2]))
 
-        self.updateProgress("Found %d usernames and replaced specialcharacters in %s. (Check Log !)" % (self.usercount, changecount))
+        self.updateProgress("Found %d usernames and replaced specialcharacters in %s. (Check Log !)\n" % (self.usercount, changecount))
         self.ui.filename.setText("'%s'  |  %s Benutzer gefunden" %(filename[1],len(users)))
         return
 
@@ -560,8 +560,13 @@ class MeinDialog(QtWidgets.QDialog):
         
         self.updateProgress("Trying to log in")
     
-        self.ocinstance = Client(self.homepage_url)
-        self.ocinstance.login(self.admin_username, self.admin_password)
+        try:
+            self.ocinstance = Client(self.homepage_url)
+            self.ocinstance.login(self.admin_username, self.admin_password)
+        except:  #connection error
+            self.updateProgress("Please check the URL. Connection failed.") 
+            self.enabledUI(True)
+            return
 
         try:   #test connection info 
             adminexists = self.ocinstance.user_exists(self.admin_username)
