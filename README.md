@@ -6,4 +6,4 @@ This application is written in Python3 and PyQt5
 
 
 
-![Image of life-nextcloudusers](http://life-edu.eu/images/nextcloudusers1.png)
+![Image of life-nextcloudusers](http://life-edu.eu/images/nextcloudusers2.png)
