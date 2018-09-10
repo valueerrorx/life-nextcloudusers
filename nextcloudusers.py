@@ -16,7 +16,7 @@ from six.moves.urllib import parse
 
 USER = subprocess.check_output("logname", shell=True).rstrip().decode("utf-8")
 USER_HOME_DIR = os.path.join("/home", str(USER))
-
+VERSION="1.0-nc14"
 
 
 
@@ -445,6 +445,10 @@ class MeinDialog(QtWidgets.QDialog):
         self.extraThread.finished.connect(lambda: self.finished(self.createdusercount))
         self.worker.processed.connect(self.updateProgress)
         self.worker.finished.connect(self.finished)
+        
+        
+        
+        self.tolog("NextCloud Users Version: %s\n" %VERSION)
 
         ###########    delete loginDATA  !!!!!     #######
         self.homepage_url = ""
@@ -693,6 +697,8 @@ class  Worker(QtCore.QObject):
                             errormsg = "username already exists"
                         elif "103" in str(e):
                             errormsg = "unknown error occurred whilst adding the user"
+                        elif "106" in str(e):
+                            errormsg = "insufficent rights to create users in this group"
                         else: 
                             errormsg = ""
                             
