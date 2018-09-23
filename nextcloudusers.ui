@@ -75,7 +75,7 @@
              </font>
             </property>
             <property name="text">
-             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Bitte wählen sie eine Textdatei (kommagetrennt) als Datenquelle. (csv)&lt;/p&gt;&lt;p&gt;Nachname, Vorname, Password&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Bitte wählen sie eine Textdatei (kommagetrennt) als Datenquelle. (csv)&lt;/p&gt;&lt;p&gt;Nachname, Vorname, Passwort&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
@@ -388,7 +388,7 @@
            <widget class="QPushButton" name="start">
             <property name="minimumSize">
              <size>
-              <width>200</width>
+              <width>220</width>
               <height>48</height>
              </size>
             </property>
@@ -411,7 +411,7 @@
            <widget class="QPushButton" name="exit">
             <property name="minimumSize">
              <size>
-              <width>200</width>
+              <width>160</width>
               <height>48</height>
              </size>
             </property>
