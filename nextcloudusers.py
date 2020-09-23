@@ -16,7 +16,7 @@ from six.moves.urllib import parse
 
 USER = subprocess.check_output("logname", shell=True).rstrip().decode("utf-8")
 USER_HOME_DIR = os.path.join("/home", str(USER))
-VERSION="1.0-nc14"
+VERSION="1.0-nc"
 
 
 
@@ -526,13 +526,13 @@ class MeinDialog(QtWidgets.QDialog):
                 user[0] = re.sub("[ß]", "ss", user[0])
                
                 user[1] = re.sub("[âáà]", "a", user[1])
-                user[0] = re.sub("[ä]", "ae", user[1])
+                user[1] = re.sub("[ä]", "ae", user[1])
                 user[1] = re.sub("[èéêěë]", "e", user[1])
                 user[1] = re.sub("[ìíǐîï]", "i", user[1])
                 user[1] = re.sub("[òǒóôõ]", "o", user[1])
-                user[0] = re.sub("[ö]", "oe", user[1])
+                user[1] = re.sub("[ö]", "oe", user[1])
                 user[1] = re.sub("[ùǔúû]", "u", user[1])
-                user[0] = re.sub("[ü]", "ue", user[1])
+                user[1] = re.sub("[ü]", "ue", user[1])
                 user[1] = re.sub("[ćĉč]", "c", user[1])
                 user[1] = re.sub("[ß]", "ss", user[1])
                
