@@ -208,7 +208,7 @@
                 <item>
                  <widget class="QLineEdit" name="domain">
                   <property name="text">
-                   <string>https://owncloud.europagymnasium.at</string>
+                   <string>https://cloud.europagymnasium.at</string>
                   </property>
                  </widget>
                 </item>
