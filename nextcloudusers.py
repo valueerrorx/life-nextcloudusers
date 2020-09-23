@@ -514,21 +514,27 @@ class MeinDialog(QtWidgets.QDialog):
             chars = set('âáàäèéêěëìíǐîïòǒóôõöùǔúûüćĉčß')
             if any((c in chars) for c in user[0]) or any((c in chars) for c in user[1]):
                 
-                user[0] = re.sub("[âáàä]", "a", user[0])
+                user[0] = re.sub("[âáà]", "a", user[0])
+                user[0] = re.sub("[ä]", "ae", user[0])
                 user[0] = re.sub("[èéêěë]", "e", user[0])
                 user[0] = re.sub("[ìíǐîï]", "i", user[0])
-                user[0] = re.sub("[òǒóôõö]", "o", user[0])
-                user[0] = re.sub("[ùǔúûü]", "u", user[0])
+                user[0] = re.sub("[òǒóôõ]", "o", user[0])
+                user[0] = re.sub("[ö]", "oe", user[0])
+                user[0] = re.sub("[ùǔúû]", "u", user[0])
+                user[0] = re.sub("[ü]", "ue", user[0])
                 user[0] = re.sub("[ćĉč]", "c", user[0])
-                user[0] = re.sub("[ß]", "s", user[0])
+                user[0] = re.sub("[ß]", "ss", user[0])
                
-                user[1] = re.sub("[âáàä]", "a", user[1])
+                user[1] = re.sub("[âáà]", "a", user[1])
+                user[0] = re.sub("[ä]", "ae", user[0])
                 user[1] = re.sub("[èéêěë]", "e", user[1])
                 user[1] = re.sub("[ìíǐîï]", "i", user[1])
-                user[1] = re.sub("[òǒóôõö]", "o", user[1])
-                user[1] = re.sub("[ùǔúûü]", "u", user[1])
+                user[1] = re.sub("[òǒóôõ]", "o", user[1])
+                user[0] = re.sub("[ö]", "oe", user[0])
+                user[1] = re.sub("[ùǔúû]", "u", user[1])
+                user[0] = re.sub("[ü]", "ue", user[0])
                 user[1] = re.sub("[ćĉč]", "c", user[1])
-                user[1] = re.sub("[ß]", "s", user[1])
+                user[1] = re.sub("[ß]", "ss", user[1])
                
                 changecount += 1
             
